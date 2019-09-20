@@ -46,7 +46,8 @@ module.exports = {
             //npm install --save-dev react react-dom @types/react @types/react-dom
             {
                 test: /\.tsx?$/,
-                exclude: /node_modules/, //不解析node_modules
+                // exclude: /node_modules/, //不解析node_modules
+                // include: path.join(__dirname, '/node_modules/antd'),
                 options: {
                     getCustomTransformers: () => ({
                       before: [ tsImportPluginFactory({
@@ -58,6 +59,13 @@ module.exports = {
                 },
                 loader: 'ts-loader'
             },
+            // {
+            //     test: /\.(js|jsx|mjs)$/,
+            //     loader: require.resolve('babel-loader'),
+            //     exclude: function (path) {
+            //         return (!!path.match(/node_modules/));
+            //     }
+            // },
             //加载json，png等文件
             //安装npm install --save-dev file-loader
             {
@@ -68,7 +76,7 @@ module.exports = {
             //安装npm install --save-dev css-loader
             //npm install style-loader --save-dev
             {
-                test: /\.s(a|c)ss$/,
+                test: /\.(scss|sass)$/,
                 use: [
                     'style-loader',
                     'css-loader',
@@ -83,6 +91,22 @@ module.exports = {
                     }
                 ]
             },
+            {
+                test: /\.(le|c)ss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            includePaths: [
+                                path.resolve(__dirname, './node_modules')
+                            ],
+                            javascriptEnabled: true
+                        }
+                    }
+                ]
+            }
         ]
     }
 }

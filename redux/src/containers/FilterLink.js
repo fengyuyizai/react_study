@@ -8,8 +8,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   click: () => {
+    console.log(ownProps)
     const action = setVisibilityFilter(ownProps)
-    console.log(action)
     dispatch(action)
   }
 })

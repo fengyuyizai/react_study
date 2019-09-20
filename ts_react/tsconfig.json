@@ -14,7 +14,9 @@
       "allowSyntheticDefaultImports": true,
       "baseUrl": ".",
       "paths": {
-        "@/*": ["./src/*"]
+        "@/*": [
+          "src/*"
+        ]
       },
       "allowJs": true
     },

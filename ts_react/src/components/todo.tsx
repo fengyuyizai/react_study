@@ -17,7 +17,7 @@ export default class Todo extends React.Component<initPorps> {
         return (
             <div>
                 <input type="text" ref={this.inputRef}/>
-                <Button onClick={this.addTodo.bind(this)}>添加</Button>
+                <Button type="primary" onClick={this.addTodo.bind(this)}>添加</Button>
             </div>
         )
     }
