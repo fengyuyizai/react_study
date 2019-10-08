@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "allowJs": true,
+        "jsx": "react",
+        "sourceMap": true,
+        "paths": {
+            "@/*": ["./src"]
+        }
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
