@@ -1,5 +1,5 @@
 import * as React from "react"
-import { HashRouter, Route, Switch } from 'react-router-dom'
+import { Redirect, HashRouter, Route, Switch } from 'react-router-dom'
 import router from './router/index'
 
 export default class App extends React.Component {
@@ -12,6 +12,7 @@ export default class App extends React.Component {
                             return <Route key={i} {...route}></Route>
                         })
                     }
+                    <Redirect from="/" to="/home"></Redirect>
                 </Switch>
             </HashRouter>
         )
